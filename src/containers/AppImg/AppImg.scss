@@ -1,0 +1,15 @@
+.ImgClass{
+  width:200px;
+  height: 200px;
+  background:url("../../public/images/123.jpg") no-repeat;
+  background-size:100% auto ;
+}
+
+@font-face {
+  font-family: huawenxingkai;
+  src: url("../../public/font/huawenxingkai.ttf")
+}
+.strong{
+  color: #cd0000;
+  font-family:huawenxingkai ;
+}

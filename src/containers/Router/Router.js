@@ -13,6 +13,7 @@ import AppD from '../AppD/AppD.js';
 import Nav from '../Nav/Nav.js';
 import AppLogin from '../AppLogin/AppLogin.js';
 import AppImg from '../AppImg/AppImg';
+import Test from '../Test/Test';
 
 export default class router extends React.Component {
     constructor(props, context) {
@@ -32,6 +33,7 @@ export default class router extends React.Component {
                         <Route path="/appD" component={AppD}/>
                         <Route path="/appLogin" component={AppLogin}/>
                         <Route path="/appImg" component={AppImg}/>
+                        <Route path="/test" component={Test}/>
                     </Switch>
                 </div>
 

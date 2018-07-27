@@ -4,9 +4,6 @@
 var path = require('path');
 var webpack = require('webpack');
 
-//分离打包css
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 module.exports = {
     cache: true,
     context: path.join(__dirname, '../'),
@@ -15,7 +12,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: '[name].bundle.js',
+        filename: 'js/[name].bundle.js',
         publicPath: '/',
     },
     module: {
@@ -24,20 +21,6 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 use: ['es3ify-loader','babel-loader'],
                 exclude: /node_modules/
-            },
-            {
-                test: /\.(css|sass|scss)$/,
-                use: [
-                    {
-                        //如果为生产模式，就进行css分离
-                        loader: process.env.NODE_ENV == "production" ? MiniCssExtractPlugin.loader : "style-loader"
-                    }, {
-                        loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-                    }, {
-                        loader: 'sass-loader'
-                    }, {
-                        loader: 'postcss-loader'
-                    }],
             },
             //图片压缩
             {

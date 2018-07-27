@@ -15,6 +15,7 @@ export default class App extends React.Component {
                 <li><NavLink to="/appD">AppD</NavLink></li>
                 <li><NavLink to="/appLogin">AppLogin</NavLink></li>
                 <li><NavLink to="/appImg">AppImg</NavLink></li>
+                <li><NavLink to="/test">Test</NavLink></li>
             </div>
         )
     }

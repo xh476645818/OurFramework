@@ -17,10 +17,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //分离打包css
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+console.log(project);
+
 module.exports = merge(common, {
     mode: 'production',
     module: {
-        rules: []
+        rules: [{
+            test: /\.(css|sass|scss)$/,
+            use: [
+                {
+                    //如果为生产模式，就进行css分离
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: "../"
+                    }
+                }, {
+                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+                }, {
+                    loader: 'sass-loader'
+                }, {
+                    loader: 'postcss-loader'
+                }]
+        }]
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
@@ -35,8 +53,8 @@ module.exports = merge(common, {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "[name].css",
-            chunkFilename: "[id].css"
+            filename: "css/[name].css",
+            chunkFilename: "css/[id].css"
         })
     ]
 });

@@ -19,7 +19,22 @@ module.exports = merge(common, {
         port: project.devPort,
     },
     module: {
-        rules: []
+        rules: [
+            {
+                test: /\.(css|sass|scss)$/,
+                use: [
+                    {
+                        //如果为生产模式，就进行css分离
+                        loader:"style-loader"
+                    }, {
+                        loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+                    }, {
+                        loader: 'sass-loader'
+                    }, {
+                        loader: 'postcss-loader'
+                    }],
+            },
+        ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

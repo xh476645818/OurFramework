@@ -45,7 +45,7 @@ module.exports = merge(common, {
         //html文件移动
         new HtmlWebpackPlugin({
             title: project.title,
-            template: path.join(__dirname, '../') + 'src/template.html',
+            template: path.join(__dirname, '../') + 'src/entrance/template.html',
             templateParameters: true,
             inject: 'body'
         }),

@@ -8,7 +8,7 @@ module.exports = {
     cache: true,
     context: path.join(__dirname, '../'),
     entry: {
-        app: ['babel-polyfill','./src/entrance/app.js']
+        app: ['babel-polyfill', './src/entrance/app.js']
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -19,7 +19,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: ['es3ify-loader','babel-loader'],
+                use: ['es3ify-loader', 'babel-loader'],
                 exclude: /node_modules/
             },
             //图片压缩
@@ -30,14 +30,12 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
-                            name:"img/[name].[hash].[ext]",
-                            publicpath:'./'
+                            name: "img/[name].[hash].[ext]",
+                            publicpath: './'
                         }
-                    },{
+                    }, {
                         loader: 'image-webpack-loader',
-                        options: {
-
-                        }
+                        options: {}
                     }
                 ]
             },
@@ -48,8 +46,8 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit:8192,
-                            name:"./font/[name].[hash].[ext]"
+                            limit: 8192,
+                            name: "./font/[name].[hash].[ext]"
                         }
                     }
                 ]
@@ -64,5 +62,12 @@ module.exports = {
                 }
             },
         ]
+    },
+    resolve: {
+        alias: {
+            img: path.resolve(__dirname, '../src/public/images'),
+            font: path.resolve(__dirname, '../src/public/font'),
+            data: path.resolve(__dirname, '../src/public/data')
+        }
     }
 };

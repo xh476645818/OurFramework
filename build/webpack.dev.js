@@ -10,7 +10,7 @@ console.log('11111111111',__dirname)
 module.exports = merge(common, {
     mode: 'development',
     devServer: {
-        contentBase: path.resolve(__dirname, '../src'),
+        contentBase: path.resolve(__dirname, '../src/'),
         historyApiFallback: true,
         compress: true,
         inline: true,
@@ -38,10 +38,5 @@ module.exports = merge(common, {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
-    ],
-    resolve:{
-        alias: {
-            img: path.resolve(__dirname, '../src/public/images')
-        }
-    }
+    ]
 });

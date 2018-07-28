@@ -8,7 +8,7 @@ module.exports = {
     cache: true,
     context: path.join(__dirname, '../'),
     entry: {
-        app: ['babel-polyfill','./src/index.js']
+        app: ['babel-polyfill','./src/entrance/app.js']
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -53,7 +53,16 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
+            //音视频处理
+            {
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: 'media/[name].[ext]',
+                }
+            },
         ]
     }
 };

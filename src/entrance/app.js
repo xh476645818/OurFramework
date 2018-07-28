@@ -5,12 +5,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Router from './containers/Router/Router.js';
+import Router from '../containers/Router/Router.js';
 import {Provider} from 'react-redux'
 
-import store from './Redux/Store/index';
+import store from '../redux/Store/index';
 
-import Mock from './Mock/index';
+import Mock from '../mock/index';
 ReactDOM.render(
     <Provider store={store}>
         <Router/>

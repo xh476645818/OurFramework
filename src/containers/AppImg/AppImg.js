@@ -2,9 +2,8 @@
  * Created by xiaohe on 2018/5/7.
  */
 import React, {Component} from 'react';
-import AppImgCss from "./AppImg.scss";
+import appImgCss from "./AppImg.css";
 import Img from 'img/timg.jpg';
-
 export default class AppImg extends React.Component {
     constructor(props, context) {
         super(props);
@@ -13,7 +12,7 @@ export default class AppImg extends React.Component {
     render() {
         return (
             <div>
-                <strong className={AppImgCss.strong}>这里进行图片压缩的，确保这个脚手架可以进行对图片的编译</strong>
+                <strong className={appImgCss.imgStrong}>这里进行图片压缩的，确保这个脚手架可以进行对图片的编译</strong>
                 <br/>
                 <img style={{
                     "width": "200px",
@@ -30,7 +29,7 @@ export default class AppImg extends React.Component {
                     "height": "auto"
                 }} src={"../../public/images/345.jpeg"}/>
                 <br/>
-                <div className={AppImgCss.ImgClass}></div>
+                <div className={appImgCss.imgClass}></div>
             </div>
 
         )

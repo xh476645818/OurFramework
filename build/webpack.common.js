@@ -65,9 +65,14 @@ module.exports = {
     },
     resolve: {
         alias: {
-            img: path.resolve(__dirname, '../src/public/images'),
-            font: path.resolve(__dirname, '../src/public/font'),
-            data: path.resolve(__dirname, '../src/public/data')
+            'img': path.resolve(__dirname, '../src/public/images'),
+            'font': path.resolve(__dirname, '../src/public/font'),
+            'data': path.resolve(__dirname, '../src/public/data'),
+            'mock': path.resolve(__dirname, '../src/mock'),
+            'action': path.resolve(__dirname, '../src/redux/Action'),
+            'reducer': path.resolve(__dirname, '../src/redux/Reducer'),
+            'saga': path.resolve(__dirname, '../src/redux/Saga'),
+            'store': path.resolve(__dirname, '../src/redux/Store')
         }
     }
 };

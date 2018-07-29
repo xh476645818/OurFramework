@@ -32,7 +32,12 @@ module.exports = merge(common, {
                         publicPath: "../"
                     }
                 }, {
-                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+                    loader: "css-loader", // 将 CSS 转化成 CommonJS 模块
+                    options: {
+                        camelCase: true,
+                        minimize:true,
+                        modules:true
+                    }
                 }, {
                     loader: 'sass-loader'
                 }, {

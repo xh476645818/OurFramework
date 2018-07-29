@@ -65,14 +65,30 @@ module.exports = {
     },
     resolve: {
         alias: {
+            //图片别名
             'img': path.resolve(__dirname, '../src/public/images'),
+            //图片别名
+            'media': path.resolve(__dirname, '../src/public/media'),
+            //字体别名
             'font': path.resolve(__dirname, '../src/public/font'),
+            //data别名
             'data': path.resolve(__dirname, '../src/public/data'),
+            //mock别名
             'mock': path.resolve(__dirname, '../src/mock'),
+            //action别名
             'action': path.resolve(__dirname, '../src/redux/Action'),
+            //reducer别名
             'reducer': path.resolve(__dirname, '../src/redux/Reducer'),
+            //saga别名
             'saga': path.resolve(__dirname, '../src/redux/Saga'),
-            'store': path.resolve(__dirname, '../src/redux/Store')
+            //store别名
+            'store': path.resolve(__dirname, '../src/redux/Store'),
+            //容器别名
+            'con': path.resolve(__dirname, '../src/containers'),
+            //组件别名
+            'com': path.resolve(__dirname, '../src/component'),
+            //公用方法
+            'method': path.resolve(__dirname, '../src/public/method')
         }
     }
 };

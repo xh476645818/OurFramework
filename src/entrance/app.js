@@ -5,7 +5,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Router from '../containers/Router/Router.js';
+import Router from 'con/Router/Router.js';
 import {Provider} from 'react-redux'
 
 import store from 'store/index.js';

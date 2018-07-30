@@ -1,7 +1,7 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import * as Action from "../Action/action.type.js";
+import * as Action from "action/index";
 
 const AppC = (state = "", action) => {
     switch (action.type) {

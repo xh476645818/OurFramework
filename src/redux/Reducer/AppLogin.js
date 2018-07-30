@@ -1,7 +1,7 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import * as Action from "../Action/action.type.js";
+import * as Action from "action/index";
 
 //thunk方式时，name，pwd，的监听方法，特意做的区分
 const AppLoginThunk = (state = {"name": "", "password": ""}, action) => {

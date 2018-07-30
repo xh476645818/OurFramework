@@ -4,10 +4,10 @@
 import React, {Component} from 'react';
 
 //获取action，应用action的方法发起改变
-import {AppBdo, AppBasyn} from '../../Redux/Action/action.js'
+import {AppBdo, AppBasynDo} from 'action/index'
 import {connect} from 'react-redux';
 
-import Dom from "../../component/Dom/Dom.js";
+import {Dom} from 'com/index.js';
 
 class DomLayer extends React.Component {
     constructor(props) {
@@ -55,7 +55,7 @@ const mapDispatchToProps = (dispatch) => (
                 dispatch(AppBdo(appBdo(text)))
             },
             con: () => {
-                dispatch(AppBasyn())
+                dispatch(AppBasynDo())
             }
         }
     )

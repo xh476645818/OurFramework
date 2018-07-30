@@ -5,7 +5,7 @@
 import {delay} from 'redux-saga'
 import {put, call, takeEvery, take, fork, all} from 'redux-saga/effects'
 
-import * as Action from '../Action/action.type.js';
+import * as Action from 'action/index';
 import axios from 'axios';
 
 function* AppDSaga() {

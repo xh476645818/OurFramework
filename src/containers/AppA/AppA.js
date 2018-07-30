@@ -3,12 +3,10 @@
  */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Dom from "../../component/Dom/Dom.js";
-import Result from "../../component/Result/Result.js";
-import Clear from "../../component/Clear/Clear.js";
-import "./App.scss";
+import {Dom,Result,Clear} from 'com/index.js'
+import "./AppA.scss";
 
-export default class App extends React.Component {
+export default class AppA extends React.Component {
     constructor(props, context) {
         super(props);
         this.state = {
@@ -65,6 +63,6 @@ export default class App extends React.Component {
         )
     }
 };
-App.contextTypes = {
+AppA.contextTypes = {
     store: PropTypes.object
 }

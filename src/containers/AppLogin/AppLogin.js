@@ -6,11 +6,16 @@ import {connect} from 'react-redux';
 
 import PropTypes from 'prop-types';
 
-import LoginName from '../../component/LoginName/LoginName'
-import LoginPassword from '../../component/LoginPassword/LoginPassword'
-import Button from '../../component/Button/Button'
+import {LoginName, LoginPassword, Button} from 'com/index.js';
 
-import {AppLoginNameThunk, AppLoginPasswordThunk,AppLoginNameSaga,AppLoginPasswordSaga, AppLoginButtonThunk, AppLoginButtonToSaga} from '../../Redux/Action/action';
+import {
+    AppLoginNameThunkDo,
+    AppLoginPasswordThunkDo,
+    AppLoginNameSagaDo,
+    AppLoginPasswordSagaDo,
+    AppLoginButtonThunkDo,
+    AppLoginButtonToSagaDo
+} from 'action/index';
 
 class AppLogin extends Component {
     constructor(props, context) {
@@ -81,33 +86,33 @@ const switchResult = (e, callback, event) => {
 }
 
 const mapStateToProps = (state, ownProps) => (
-        {
-            textA: state.AppLoginButtonThunk,
-            textB: state.AppLoginButtonSaga
-        }
+    {
+        textA: state.AppLoginButtonThunk,
+        textB: state.AppLoginButtonSaga
+    }
 )
 const mapDispatchToProps = (dispatch, state) => (
     {
         LoginNameThunk: (e) => {
-            dispatch(AppLoginNameThunk(e))
+            dispatch(AppLoginNameThunkDo(e))
         },
         LoginPasswordThunk: (e) => {
-            dispatch(AppLoginPasswordThunk(e))
+            dispatch(AppLoginPasswordThunkDo(e))
         },
         LoginNameSaga: (e) => {
-            dispatch(AppLoginNameSaga(e))
+            dispatch(AppLoginNameSagaDo(e))
         },
         LoginPasswordSaga: (e) => {
-            dispatch(AppLoginPasswordSaga(e))
+            dispatch(AppLoginPasswordSagaDo(e))
         },
         ThunkLogin: () => {
-            dispatch(AppLoginButtonThunk())
+            dispatch(AppLoginButtonThunkDo())
         },
         SagaLogin: (e) => {
             console.log(e.store.getState())
             let store = e.store.getState().AppLoginSaga;
             let result = format(store);
-            switchResult(result, AppLoginButtonToSaga, dispatch)
+            switchResult(result, AppLoginButtonToSagaDo, dispatch)
         }
     });
 AppLogin.contextTypes = {

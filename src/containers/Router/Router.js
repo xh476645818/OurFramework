@@ -5,15 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {HashRouter, Route, NavLink, Link, Switch} from 'react-router-dom';
 
-import Conclusion from '../Conclusion/ParentAssembly';
-import AppA from '../AppA/AppA.js';
-import AppB from '../AppB/AppB.js';
-import AppC from '../AppC/AppC.js';
-import AppD from '../AppD/AppD.js';
-import Nav from '../Nav/Nav.js';
-import AppLogin from '../AppLogin/AppLogin.js';
-import AppImg from '../AppImg/AppImg';
-import Test from '../Test/Test';
+
+import {AppA,AppB,AppC,AppD,Nav,AppLogin,AppImg,Conclusion} from 'con/index.js'
 
 export default class router extends React.Component {
     constructor(props, context) {
@@ -33,7 +26,6 @@ export default class router extends React.Component {
                         <Route path="/appD" component={AppD}/>
                         <Route path="/appLogin" component={AppLogin}/>
                         <Route path="/appImg" component={AppImg}/>
-                        <Route path="/test" component={Test}/>
                     </Switch>
                 </div>
 

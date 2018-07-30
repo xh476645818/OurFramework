@@ -33,9 +33,6 @@ module.exports = {
                             name: "img/[name].[hash].[ext]",
                             publicpath: './'
                         }
-                    }, {
-                        loader: 'image-webpack-loader',
-                        options: {}
                     }
                 ]
             },

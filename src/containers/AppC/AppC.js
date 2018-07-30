@@ -3,10 +3,8 @@
  */
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {AppCdo,AppCclear,AppCdoAsync} from '../../Redux/Action/action.js'
-import Input from "../../component/Input/InputRedux.js"
-import Clear from "../../component/Clear/Clear.js"
-import Result from "../../component/Result/Result.js"
+import {AppCdo,AppCclearDo,AppCdoAsync} from 'action/index'
+import {Input,Clear,Result} from 'com/index.js'
 
 var AppC = ({text, InputEvent,InputEventAsync, clearEvent}) => (
     <div>
@@ -41,7 +39,7 @@ const appCdoAsync = (e, dispatch) => {
     }
 }
 const appCclear = (e, dispatch) => {
-    dispatch(AppCclear())
+    dispatch(AppCclearDo())
 }
 const mapStateToProps = (state, ownProps) => {
     console.log(state)

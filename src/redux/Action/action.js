@@ -1,7 +1,7 @@
 /**
  * Created by xiaohe on 2018/5/17.
  */
-import * as Action from './action.type.js';
+import * as Action from 'action/index';
 import {thunk} from 'redux-thunk';
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ const AppBdo = (text) => ({
     text
 })
 
-const AppBasyn = (text) => dispatch => {
+const AppBasynDo = (text) => dispatch => {
     axios.get("/a").then((response) => {
         console.log('AppBasyn', response)
         dispatch({
@@ -54,37 +54,37 @@ const AppCdoAsync = (text) => dispatch => {
         dispatch(AppCdo(text))
     }, 1000)
 }
-const AppBclear = (e) => ({
+const AppBclearDo = (e) => ({
     type: Action.AppBclear
 })
-const AppCclear = (e) => (
+const AppCclearDo = (e) => (
     console.log('Action:AppCclear', '清除'),
         {
             type: Action.AppCclear
         })
 
 //登录
-const AppLoginNameThunk = (e) => (
+const AppLoginNameThunkDo = (e) => (
     {
         type: Action.AppLoginNameThunk,
         name: e
     });
-const AppLoginPasswordThunk = (e) => (
+const AppLoginPasswordThunkDo = (e) => (
     {
         type: Action.AppLoginPasswordThunk,
         password: e
     })
-const AppLoginNameSaga = (e) => (
+const AppLoginNameSagaDo = (e) => (
     {
         type: Action.AppLoginNameSaga,
         name: e
     });
-const AppLoginPasswordSaga = (e) => (
+const AppLoginPasswordSagaDo = (e) => (
     {
         type: Action.AppLoginPasswordSaga,
         password: e
     })
-const AppLoginButtonThunk = (e) => (dispatch, getState) => {
+const AppLoginButtonThunkDo = (e) => (dispatch, getState) => {
     console.log('AppLoginButtonThunk', getState().AppLoginThunk.name)
     let name = getState().AppLoginThunk.name;
     let password = getState().AppLoginThunk.password;
@@ -113,7 +113,7 @@ const AppLoginButtonThunk = (e) => (dispatch, getState) => {
         }
     })
 }
-const AppLoginButtonToSaga = (e) => (
+const AppLoginButtonToSagaDo = (e) => (
     {
         type: Action.AppLoginButtonToSaga,
         result: e
@@ -121,18 +121,18 @@ const AppLoginButtonToSaga = (e) => (
 )
 export {
     AppBdo,
-    AppBasyn,
+    AppBasynDo,
     AppCdo,
     AppDdo,
-    AppBclear,
-    AppCclear,
+    AppBclearDo,
+    AppCclearDo,
     AppCdoAsync,
     AppDdoAsyn,
     AppDdoResult,
-    AppLoginNameThunk,
-    AppLoginNameSaga,
-    AppLoginPasswordThunk,
-    AppLoginPasswordSaga,
-    AppLoginButtonThunk,
-    AppLoginButtonToSaga
+    AppLoginNameThunkDo,
+    AppLoginNameSagaDo,
+    AppLoginPasswordThunkDo,
+    AppLoginPasswordSagaDo,
+    AppLoginButtonThunkDo,
+    AppLoginButtonToSagaDo
 };

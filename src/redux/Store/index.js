@@ -7,8 +7,8 @@ import createSagaMiddleware  from 'redux-saga';
 const sagaMiddleware=createSagaMiddleware();
 
 //所有reducer的大集合
-import Reducer from '../Reducer/index.js';
-import Saga from '../Saga/index.js';
+import Reducer from 'reducer/index.js';
+import Saga from 'saga/index.js';
 
 const store = createStore(Reducer
     ,

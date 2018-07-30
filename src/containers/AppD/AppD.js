@@ -4,10 +4,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {AppDdo,AppDdoAsyn} from '../../Redux/Action/action';
-import Dom from '../../component/Dom/Dom';
+import {AppDdo,AppDdoAsyn} from 'action/index';
+import {Dom} from 'com/index.js'
 
-class App extends React.Component {
+class AppD extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.handle = this.props.handle.bind(this);
@@ -37,7 +37,7 @@ class App extends React.Component {
         )
     }
 };
-App.contextTypes = {
+AppD.contextTypes = {
     store: PropTypes.object
 }
 const mapStateToProps = (state) => (
@@ -52,6 +52,6 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(AppDdoAsyn())
     }
 })
-App = connect(mapStateToProps, mapDispatchToProps)(App);
+AppD = connect(mapStateToProps, mapDispatchToProps)(AppD);
 
-export default App
+export default AppD

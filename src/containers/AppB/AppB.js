@@ -6,8 +6,7 @@ import React, {Component} from 'react';
 import Result from './ResultRedux.js';
 import Clear from './ClearRedux.js';
 import DomLayer from "./DomLayerRedux";
-
-import "./App.css"
+import "./AppB.css"
 
 class AppB extends Component {
     constructor(props) {

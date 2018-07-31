@@ -76,5 +76,16 @@
   },
   "author": "xiaohe",
   "license": "ISC",
-  "description": "其实就是自己测试的脚手架，呵呵呵"
+  "description": "其实就是自己测试的脚手架，呵呵呵",
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xh476645818/OurFramework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xh476645818/OurFramework/issues"
+  },
+  "homepage": "https://github.com/xh476645818/OurFramework#readme"
 }

@@ -109,7 +109,7 @@ import {A,B1} from "action/index"
 其他文件使用小写；**  
 ![The directory name](directoryName.jpg "The directory name图例")  
 
-###目录结构  
+### 目录结构  
 ```shell
 ├── build                      // 构建相关  
 ├── config                     // 配置相关

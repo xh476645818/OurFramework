@@ -6,11 +6,17 @@
     git clone git@github.com:xh476645818/OurFramework.git  
 
     # 安装依赖
+    // 推荐使用npm安装
     npm install
     //or 使用下列安装可以解决下载速度过慢
     npm install --registry=https://registry.npm.taobao.org  
     //or 使用cnpm
     cnpm install
+    #若已经使用cnpm 安装失败，请使用以下办法解决：
+    1、删除项目目录中package-lock.json
+    2、npm uninstall //删除package锁
+    3、物理删除nod_modules
+    4、npm install下载
  ```  
 ### 开发  
 开发模式   

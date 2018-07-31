@@ -1,4 +1,17 @@
 # React脚手架学习   
+### 前言  
+### 安装  
+```bash
+    # 克隆项目
+    git clone git@github.com:xh476645818/OurFramework.git  
+
+    # 安装依赖
+    npm install
+    //or 使用下列安装可以解决下载速度过慢
+    npm install --registry=https://registry.npm.taobao.org  
+    //or 使用cnpm
+    cnpm install
+ ```  
 ### 开发  
 开发模式   
 npm run dev  
@@ -6,6 +19,10 @@ npm run dev
 生产模式   
 npm run build 进行打包  
 npm run server 启动node服务进行浏览  
+### 访问  
+```
+浏览器访问 http://本机IP:8080
+```  
 
 #### 别名路径引入  
 1、在webpack.common.js文件中配置的全部别名路径  
@@ -86,6 +103,34 @@ Con.A;
 import {A,B1,B2} from "com/index"
 import {A,B1,B2} from "con/index"
 import {A,B1} from "action/index"
-```
+```  
+### 目录文件命名规范  
+**组件文件夹、组件.js文件及组件样式文件首字母要大写且使用大驼峰命名规范  
+其他文件使用小写；**  
+![The directory name](directoryName.jpg "The directory name图例")  
+
+###目录结构  
+```shell
+├── build                      // 构建相关  
+├── config                     // 配置相关
+├── doc                        // 文档说明
+├── src                        // 源代码
+│   ├── component              // 无状态组件
+│   ├── containers             // 大组件容器
+│   ├── entrance               // 入口文件
+│   ├── mock                   // mock数据
+│   ├── public                 // 公共文件（data、图标文字、图片、公共方法等）
+│   ├── redux                  // redux相关
+│   ├── index.html             // 入口html
+├── .gitignore                 // git 忽略项
+├── package.json               // package.json
+├── server.js                  // server
+├── 脚手架需要.md               // 脚手架需要.md
+```  
+
+
+
+
+
 
 

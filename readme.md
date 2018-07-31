@@ -95,8 +95,8 @@ export default A;
 等文件中定义各自的index.js**  
 **示例图片:**  
 
-![indexJs结构](./index.jpg "indexJs结构")  
-![indexJs内容](./indexJsContent.jpg "indexJs内容")   
+![indexJs结构](./doc/index.jpg "indexJs结构")  
+![indexJs内容](./doc/indexJsContent.jpg "indexJs内容")   
 
 **说明：使用这种方法：当项目文件庞大时可以清晰方便的使用路径文件，优化代码**  
 **使用 import * as ...方式引入和使用:**  
@@ -117,7 +117,7 @@ import {A,B1} from "action/index"
 ### 目录文件命名规范  
 **组件文件夹、组件.js文件及组件样式文件首字母要大写且使用大驼峰命名规范  
 其他文件使用小写；**  
-![The directory name](directoryName.jpg "The directory name图例")  
+![The directory name](./doc/directoryName.jpg "The directory name图例")  
 
 ### 目录结构  
 ```shell

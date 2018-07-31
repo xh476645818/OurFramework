@@ -5,7 +5,7 @@ import AppD from './AppD/AppD.js';
 import AppImg from './AppImg/AppImg.js';
 import AppLogin from './AppLogin/AppLogin.js';
 import Nav from './Nav/Nav.js';
-import ParentAssembly from './Conclusion/ParentAssembly';
+import Conclusion from './Conclusion/ParentAssembly';
 
 export {
     AppA,
@@ -15,5 +15,5 @@ export {
     AppImg,
     AppLogin,
     Nav,
-    ParentAssembly
+    Conclusion
 }

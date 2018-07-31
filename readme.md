@@ -33,7 +33,27 @@ npm run server 启动node服务进行浏览
 ```
 浏览器访问 http://192.168.3.8:8080
 ```  
-
+### 打包配置文件  
+**build目录为打包配置文件**  
+```
+├── build                        // 构建相关
+│   ├── webpack.common.js        // webpack打包配置文件
+│   ├── webpack.dev.js           // 开发环境打包配置
+```  
+### 入口文件  
+```
+├── entrance                     // 入口文件
+│   ├── app.js                   // 此文件是整个项目的主入口
+│   ├── template.html            // 模板文件（处理Ie兼容）
+```  
+**通过配置template.html文件兼容Ie8+,此文件中主要是通过引入es5-sham.min.js、es5-shim.min.js、es6-sham.min.js、es6-shim.min.js（在webpack.common.js文件中，还需配置babel-polyfill来转换语法，实现浏览器不支持原生功能的代码）**  
+```
+#考虑到网络状况的原因转换兼容文件是存放在本项目中 src/public/ie/下
+<script src="../public/ie/es5-shim.min.js"></script>
+<script src="../public/ie/es5-sham.min.js"></script>
+<script src="../public/ie/es6-shim.min.js"></script>
+<script src="../public/ie/es6-sham.min.js"></script>
+```  
 #### 别名路径引入  
 1、在webpack.common.js文件中配置的全部别名路径  
 ```

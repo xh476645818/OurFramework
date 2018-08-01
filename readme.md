@@ -35,6 +35,10 @@ npm run server 启动node服务进行浏览
   "proUrl": "192.168.3.8", //生产访问地址，关联server.js 
   "proPort": 8024          //生产访问端口，关联server.js 
 }
+# 注意：启动项目前要修改项目的开发访问地址，否则会报错；
+查看ip:
+ 打开windows命令窗口，快捷键 windows+R 输入：cmd进入DOS模式；
+ 输入：ipconfig 查看IP(IPv4 地址 即是本地IP)
 ```  
 ```
 浏览器访问 http://192.168.3.8:8080

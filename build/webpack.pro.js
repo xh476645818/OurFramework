@@ -34,14 +34,12 @@ module.exports = merge(common, {
                 }, {
                     loader: "css-loader", // 将 CSS 转化成 CommonJS 模块
                     options: {
-                        camelCase: true,
-                        minimize:true,
-                        modules:true
+                        camelCase: true
                     }
                 }, {
-                    loader: 'sass-loader'
-                }, {
                     loader: 'postcss-loader'
+                }, {
+                    loader: 'sass-loader'
                 }]
         }]
     },

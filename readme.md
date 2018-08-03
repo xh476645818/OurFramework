@@ -49,6 +49,8 @@ npm run server 启动node服务进行浏览
 ├── build                        // 构建相关
 │   ├── webpack.common.js        // webpack打包配置文件
 │   ├── webpack.dev.js           // 开发环境打包配置
+│   ├── webpack.pro.js           // 生产环境打包配置
+# 注意：不要随便改动以上文件
 ```  
 ### 入口文件  
 ```
@@ -153,18 +155,24 @@ import {A,B1} from "action/index"
 ```shell
 ├── build                      // 构建相关  
 ├── config                     // 配置相关
-├── doc                        // 文档说明
+├── doc                        // 文档说明图片
 ├── src                        // 源代码
 │   ├── component              // 无状态组件
 │   ├── containers             // 大组件容器
 │   ├── entrance               // 入口文件
 │   ├── mock                   // mock数据
-│   ├── public                 // 公共文件（data、图标文字、图片、公共方法等）
+│   ├── public                 // 公共文件（data、、图片、公共方法等）
+│   │   ├── data               // 存放mock（假）数据
+│   │   ├── font               // 图标文字
+│   │   ├── ie                 // 兼容IE8+的转换包
+│   │   ├── images             // 公共图片
+│   │   ├── method             // 公共方法
 │   ├── redux                  // redux相关
 │   ├── index.html             // 入口html
 ├── .gitignore                 // git 忽略项
 ├── package.json               // package.json
 ├── server.js                  // server
+├── readme.md                  // 脚手架项目文档说明
 ├── 脚手架需要.md               // 脚手架需要.md
 ```  
 

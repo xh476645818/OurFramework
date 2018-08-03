@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Dom,Result,Clear} from 'com/index.js'
+import {Dom, Result, Clear} from 'com/index.js'
 import "./AppA.scss";
 
 export default class AppA extends React.Component {
@@ -20,6 +20,7 @@ export default class AppA extends React.Component {
     componentWillMount() {
         fetch("../../public/data/data.json").then(
             function (res) {
+                console.log('res',res)
                 return res.json();
             }
         ).then((data) => {
@@ -55,8 +56,7 @@ export default class AppA extends React.Component {
                         })
                     }
                 </ul>
-
-                < Result text={this.state.text}/>
+                <Result text={this.state.text}/>
                 <Clear handle={this.clearEvent}/>
             </div>
 

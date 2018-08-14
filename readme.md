@@ -148,9 +148,15 @@ import {A,B1} from "action/index"
 ```  
 ### 目录文件命名规范  
 **组件文件夹、组件.js文件及组件样式文件首字母要大写且使用大驼峰命名规范  
+本项目使用sass，样式文件命名可以是：.scss或.css;命名格式与给所加样式的.js文件名相同  
 其他文件使用小写；**  
 ![The directory name](./doc/directoryName.jpg "The directory name图例")  
 
+### 样式文件导入  
+```
+//导入样式文件使用import
+import "./AppA.scss";
+```  
 ### 目录结构  
 ```shell
 ├── build                      // 构建相关  

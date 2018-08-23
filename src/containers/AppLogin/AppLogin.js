@@ -9,12 +9,17 @@ import PropTypes from 'prop-types';
 import {LoginName, LoginPassword, Button} from 'com/index.js';
 
 import {
-    AppLoginNameThunkDo,
-    AppLoginPasswordThunkDo,
-    AppLoginNameSagaDo,
-    AppLoginPasswordSagaDo,
+    APPLOGIN_NAME_THUNK,
+    APPLOGIN_NAME_SAGA,
+    APPLOGIN_PASSWORD_THUNK,
+    APPLOGIN_PASSWORD_SAGA,
+    APPLOGIN_BUTTON_THUNK,
+    APPLOGIN_SAGA,
+    APPLOGIN_BUTTON_SAGA,
+    APPLOGIN_BUTTON_TO_SAGA,
     AppLoginButtonThunkDo,
-    AppLoginButtonToSagaDo
+    AppLoginButtonToSagaDo,
+    actionCreate
 } from 'action/index';
 
 class AppLogin extends Component {
@@ -94,16 +99,16 @@ const mapStateToProps = (state, ownProps) => (
 const mapDispatchToProps = (dispatch, state) => (
     {
         LoginNameThunk: (e) => {
-            dispatch(AppLoginNameThunkDo(e))
+            dispatch(actionCreate(APPLOGIN_NAME_THUNK, e))
         },
         LoginPasswordThunk: (e) => {
-            dispatch(AppLoginPasswordThunkDo(e))
+            dispatch(actionCreate(APPLOGIN_PASSWORD_THUNK, e))
         },
         LoginNameSaga: (e) => {
-            dispatch(AppLoginNameSagaDo(e))
+            dispatch(actionCreate(APPLOGIN_NAME_SAGA, e))
         },
         LoginPasswordSaga: (e) => {
-            dispatch(AppLoginPasswordSagaDo(e))
+            dispatch(actionCreate(APPLOGIN_PASSWORD_SAGA, e))
         },
         ThunkLogin: () => {
             dispatch(AppLoginButtonThunkDo())

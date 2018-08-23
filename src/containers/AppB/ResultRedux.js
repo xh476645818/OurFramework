@@ -22,19 +22,20 @@ class Result extends Component {
 }
 
 const textFilter = (state) => {
+    console.log('textFilter',state)
     if (state.length >= 1) {
         var Atext = [];
         for (let i = 0; i < state.length; i++) {
-            Atext.push(state[i].text);
+            Atext.push(state[i].value);
         }
         return Atext;
     }
-    return state.text
+    return state.value
 }
 
 const mapStateToProps = (state, ownProps) => (
-    /*    console.log("ResultReduxState", state),
-            console.log("ResultReduxOwnProps", ownProps), */{
+        console.log("ResultReduxState", state),
+            console.log("ResultReduxOwnProps", ownProps), {
         text: textFilter(state.AppB)
     }
 )

@@ -1,17 +1,26 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import * as Action from "action/index";
+import {
+    APPLOGIN_NAME_THUNK,
+    APPLOGIN_NAME_SAGA,
+    APPLOGIN_PASSWORD_THUNK,
+    APPLOGIN_PASSWORD_SAGA,
+    APPLOGIN_BUTTON_THUNK,
+    APPLOGIN_SAGA,
+    APPLOGIN_BUTTON_SAGA,
+    APPLOGIN_BUTTON_TO_SAGA,
+} from 'action/index'
 
 //thunk方式时，name，pwd，的监听方法，特意做的区分
 const AppLoginThunk = (state = {"name": "", "password": ""}, action) => {
     switch (action.type) {
-        case Action.AppLoginNameThunk:
-            state.name = action.name
+        case APPLOGIN_NAME_THUNK:
+            state.name = action.value
             return state
             break;
-        case Action.AppLoginPasswordThunk:
-            state.password = action.password
+        case APPLOGIN_PASSWORD_THUNK:
+            state.password = action.value
             return state
             break;
         default:
@@ -22,12 +31,12 @@ const AppLoginThunk = (state = {"name": "", "password": ""}, action) => {
 //saga方式时，name，pwd，的监听方法，特意做的区分
 const AppLoginSaga = (state = {"name": "", "password": ""}, action) => {
     switch (action.type) {
-        case Action.AppLoginNameSaga:
-            state.name = action.name
+        case APPLOGIN_NAME_SAGA:
+            state.name = action.value
             return state
             break;
-        case Action.AppLoginPasswordSaga:
-            state.password = action.password
+        case APPLOGIN_PASSWORD_SAGA:
+            state.password = action.value
             return state
             break;
         default:
@@ -38,7 +47,7 @@ const AppLoginSaga = (state = {"name": "", "password": ""}, action) => {
 //thunk时候监听登陆按钮
 const AppLoginButtonThunk = (state = "", action) => {
     switch (action.type) {
-        case Action.AppLoginButtonThunk:
+        case APPLOGIN_BUTTON_THUNK:
             state = action.text;
             return state;
             break
@@ -50,7 +59,7 @@ const AppLoginButtonThunk = (state = "", action) => {
 //Saga，时候监听登陆按钮从saga内推过来的结果
 const AppLoginButtonSaga = (state = "", action) => {
     switch (action.type) {
-        case Action.AppLoginSaga:
+        case APPLOGIN_SAGA:
             state = action.result
             return state;
             break

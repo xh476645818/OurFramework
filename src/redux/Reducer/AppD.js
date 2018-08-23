@@ -1,11 +1,11 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import * as Action from "action/index";
+import {APPD_RESULT} from 'action/index';
 
 const AppD = (state = [], action) => {
     switch (action.type) {
-        case Action.AppDresult:
+        case APPD_RESULT:
             console.log('Action.AppDasyn.state', state)
             console.log('Action.AppDasyn.action', action.result)
             return state = action.result.data.AppD;

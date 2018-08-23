@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {AppBclearDo} from 'action/index'
+import {AppBclearDo, actionCreate, APPB_CLEAR} from 'action/index'
 
 const Clear =({handle})=>{
     return <div onClick={handle}>清除</div>
@@ -11,7 +11,7 @@ const Clear =({handle})=>{
 
 
 const appCclear = (e, dispatch) => {
-    dispatch(AppBclearDo())
+    dispatch(actionCreate(APPB_CLEAR))
 }
 const mapDispatchToProps = (dispatch, ownProps) => (
     {

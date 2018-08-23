@@ -1,14 +1,16 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import * as Action from 'action/index';
+import {APPB, APPB_ASYN, APPB_CLEAR} from 'action/index';
 
 const AppB = (state = [], action) => {
+
     switch (action.type) {
-        case Action.AppB:
-            return [...state, {text: action.text}];
+        case APPB:
+            console.log('actionB',action)
+            return [...state, {value: action.value}];
             break;
-        case Action.AppBclear:
+        case APPB_CLEAR:
             return [];
             break;
         default:
@@ -17,9 +19,9 @@ const AppB = (state = [], action) => {
 };
 const AppBasyn = (state = [], action) => {
     switch (action.type) {
-        case Action.AppBasyn:
-            console.log('AppBasyn', state, action);
-            return action.AppBasyn;
+        case APPB_ASYN:
+            console.log('APPB_ASYN', state, action);
+            return action.APPB_ASYN;
             break;
         default:
             return state;

@@ -6,19 +6,20 @@ import {delay} from 'redux-saga'
 import {put, call, takeEvery, take, fork, all} from 'redux-saga/effects'
 
 import * as Action from 'action/index';
+
 import axios from 'axios';
 
 function* AppDSaga() {
     console.log('AppDSaga')
     const todos = yield call(axios.get, "/a");
-    yield put({type: Action.AppDresult, result: todos});
+    yield put({type: Action.APPD_RESULT, result: todos});
 }
 
 function* AppDSagaAsyn(e) {
     console.log('AppDSagaAsyn', e)
     let todos = yield call(axios.get, "/a");
     yield delay(1000)
-    yield put({type: Action.AppDresult, result: todos});
+    yield put({type: Action.APPD_RESULT, result: todos});
 }
 
 function* LoginSaga(e) {
@@ -37,14 +38,14 @@ function* LoginSaga(e) {
             text = '肯定是失败了';
             break;
     }
-    yield put({type: Action.AppLoginSaga, result: text});
+    yield put({type: Action.APPLOGIN_SAGA, result: text});
 }
 
 //观测方法
 function* WatchSaga() {
-    yield takeEvery(Action.AppD, AppDSaga)
-    yield takeEvery(Action.AppDasyn, AppDSagaAsyn)
-    yield takeEvery(Action.AppLoginButtonToSaga,LoginSaga)
+    yield takeEvery(Action.APPD, AppDSaga)
+    yield takeEvery(Action.APPD_ASYN, AppDSagaAsyn)
+    yield takeEvery(Action.APPLOGIN_BUTTON_TO_SAGA,LoginSaga)
 }
 
 //根方法

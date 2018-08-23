@@ -7,41 +7,24 @@ import axios from 'axios';
 
 //action
 //action创建函数
-const AppBdo = (text) => ({
-    type: Action.AppB,
-    text
-})
-
 const AppBasynDo = (text) => dispatch => {
     axios.get("/a").then((response) => {
-        console.log('AppBasyn', response)
+        console.log('APPB_ASYN', response)
         dispatch({
-            type: Action.AppBasyn,
-            'AppBasyn': response.data.AppB
+            type: Action.APPB_ASYN,
+            'APPB_ASYN': response.data.AppB
         })
     })
-
 }
 
 const AppCdo = (text) => (
-    console.log('Action:Action.AppC', Action.AppC),
+    console.log('Action:Action.AppC', Action.APPC),
         {
-            type: Action.AppC,
+            type: Action.APPC,
             text
         }
 );
-const AppDdo = () => (
-    console.log('输出的action', Action.AppD),
-        {
-            type: Action.AppD
-        }
-);
-const AppDdoAsyn = (e) => (
-    console.log('输出的action', Action.AppDasyn),
-        {
-            type: Action.AppDasyn
-        }
-);
+
 const AppDdoResult = (e) => (
     console.log('输出的action', Action.AppDasyn),
         {
@@ -54,41 +37,13 @@ const AppCdoAsync = (text) => dispatch => {
         dispatch(AppCdo(text))
     }, 1000)
 }
-const AppBclearDo = (e) => ({
-    type: Action.AppBclear
-})
-const AppCclearDo = (e) => (
-    console.log('Action:AppCclear', '清除'),
-        {
-            type: Action.AppCclear
-        })
 
 //登录
-const AppLoginNameThunkDo = (e) => (
-    {
-        type: Action.AppLoginNameThunk,
-        name: e
-    });
-const AppLoginPasswordThunkDo = (e) => (
-    {
-        type: Action.AppLoginPasswordThunk,
-        password: e
-    })
-const AppLoginNameSagaDo = (e) => (
-    {
-        type: Action.AppLoginNameSaga,
-        name: e
-    });
-const AppLoginPasswordSagaDo = (e) => (
-    {
-        type: Action.AppLoginPasswordSaga,
-        password: e
-    })
 const AppLoginButtonThunkDo = (e) => (dispatch, getState) => {
     console.log('AppLoginButtonThunk', getState().AppLoginThunk.name)
     let name = getState().AppLoginThunk.name;
     let password = getState().AppLoginThunk.password;
-    if (name==''||password=='') {
+    if (name == '' || password == '') {
         alert('请输入正确内容');
         return
     }
@@ -100,13 +55,13 @@ const AppLoginButtonThunkDo = (e) => (dispatch, getState) => {
         switch (res.data.success) {
             case true || 'true':
                 dispatch({
-                    type: Action.AppLoginButtonThunk,
+                    type: Action.APPLOGIN_BUTTON_THUNK,
                     text: '看来是成功了'
                 })
                 break;
             default:
                 dispatch({
-                    type: Action.AppLoginButtonThunk,
+                    type: Action.APPLOGIN_BUTTON_THUNK,
                     text: '肯定是失败了'
                 })
                 break;
@@ -115,24 +70,15 @@ const AppLoginButtonThunkDo = (e) => (dispatch, getState) => {
 }
 const AppLoginButtonToSagaDo = (e) => (
     {
-        type: Action.AppLoginButtonToSaga,
+        type: Action.APPLOGIN_BUTTON_TO_SAGA,
         result: e
     }
 )
 export {
-    AppBdo,
     AppBasynDo,
     AppCdo,
-    AppDdo,
-    AppBclearDo,
-    AppCclearDo,
     AppCdoAsync,
-    AppDdoAsyn,
     AppDdoResult,
-    AppLoginNameThunkDo,
-    AppLoginNameSagaDo,
-    AppLoginPasswordThunkDo,
-    AppLoginPasswordSagaDo,
     AppLoginButtonThunkDo,
     AppLoginButtonToSagaDo
 };

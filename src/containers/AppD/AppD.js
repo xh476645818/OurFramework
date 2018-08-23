@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {AppDdo,AppDdoAsyn} from 'action/index';
+import {APPD,APPD_ASYN, actionCreate} from 'action/index';
 import {Dom} from 'com/index.js'
 
 class AppD extends React.Component {
@@ -46,10 +46,10 @@ const mapStateToProps = (state) => (
     })
 const mapDispatchToProps = (dispatch) => ({
     handle: (e) => {
-        dispatch(AppDdo())
+        dispatch(actionCreate(APPD))
     },
     handleAsyn: (e) => {
-        dispatch(AppDdoAsyn())
+        dispatch(actionCreate(APPD_ASYN))
     }
 })
 AppD = connect(mapStateToProps, mapDispatchToProps)(AppD);

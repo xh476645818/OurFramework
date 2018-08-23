@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 
 //获取action，应用action的方法发起改变
-import {AppBdo, AppBasynDo} from 'action/index'
+import {AppBasynDo, APPB, actionCreate} from 'action/index'
 import {connect} from 'react-redux';
 
 import {Dom} from 'com/index.js';
@@ -25,7 +25,8 @@ class DomLayer extends React.Component {
         console.log("componentDidMount", this.props);
         console.log("componentDidMount", this.state);
     }
-    componentDidUpdate(){
+
+    componentDidUpdate() {
         console.log("componentDidUpdate", this.props);
     }
 
@@ -52,7 +53,7 @@ const appBdo = (text) => {
 const mapDispatchToProps = (dispatch) => (
         {
             handle: (text) => {
-                dispatch(AppBdo(appBdo(text)))
+                dispatch(actionCreate(APPB, appBdo(text)))
             },
             con: () => {
                 dispatch(AppBasynDo())
@@ -61,9 +62,9 @@ const mapDispatchToProps = (dispatch) => (
     )
 ;
 const mapStateToProps = (state, ownProps) => (
-        {
-            list: state.AppBasyn
-        }
+    {
+        list: state.AppBasyn
+    }
 )
 DomLayer = connect(mapStateToProps, mapDispatchToProps)(DomLayer)
 export default DomLayer;

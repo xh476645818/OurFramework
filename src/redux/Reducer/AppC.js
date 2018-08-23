@@ -1,14 +1,14 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import * as Action from "action/index";
+import {APPC, APPC_CLEAR} from 'action/index';
 
 const AppC = (state = "", action) => {
     switch (action.type) {
-        case Action.AppC:
+        case APPC:
             return [...state,action.text];
             break;
-        case Action.AppCclear:
+        case APPC_CLEAR:
             return action.text="";
             break;
         default:

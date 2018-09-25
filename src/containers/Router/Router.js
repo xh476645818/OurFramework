@@ -1,7 +1,6 @@
 /**
  * Created by xiaohe on 2018/5/8.
  */
-import React from 'react';
 import PropTypes from 'prop-types';
 import {HashRouter, Route, NavLink, Link, Switch} from 'react-router-dom';
 

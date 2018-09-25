@@ -1,8 +1,6 @@
 /**
  * Created by xiaohe on 2018/6/29.
  */
-import React, {Component} from 'react';
-
 class SubAssembly extends Component {
     constructor(props, context) {
         super(props, context);

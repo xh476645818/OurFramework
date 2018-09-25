@@ -1,8 +1,6 @@
 /**
  * Created by xiaohe on 2018/5/7.
  */
-import React, {Component} from 'react';
-
 import Result from './ResultRedux.js';
 import Clear from './ClearRedux.js';
 import DomLayer from "./DomLayerRedux";

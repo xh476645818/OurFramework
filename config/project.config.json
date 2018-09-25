@@ -1,5 +1,5 @@
 {
-  "devUrl": "localhost",
+  "devUrl": "0.0.0.0",
   "devPort": "8081",
   "webTitle": "石家庄市裕华区科技创新开发区智慧平台",
   "proUrl": "192.168.3.20",

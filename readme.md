@@ -29,7 +29,7 @@ npm run server 启动node服务进行浏览
 **访问前需要配置config/project.config.json整体工程基本设置文件**  
 ```
 {
-  "devUrl": "192.168.3.8",  //开发访问地址,开发环境中的IP地址
+  "devUrl": "0.0.0.0",  //开发访问地址,开发环境中的IP地址
   "devPort": "8080",        //开发访问端口,开发环境中的端口 
   "webTitle": "脚手架",     //项目名称，打包后的页面title标签内容
   "proUrl": "192.168.3.8", //生产访问地址，关联server.js 

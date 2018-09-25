@@ -1,12 +1,8 @@
 /**
  * Created by xiaohe on 2018/5/7.
  */
-import React, {Component} from 'react';
-
 //获取action，应用action的方法发起改变
 import {AppBasynDo, APPB, actionCreate} from 'action/index'
-import {connect} from 'react-redux';
-
 import {Dom} from 'com/index.js';
 
 class DomLayer extends React.Component {

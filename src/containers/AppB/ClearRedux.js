@@ -1,8 +1,6 @@
 /**
  * Created by xiaohe on 2018/6/11.
  */
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import {AppBclearDo, actionCreate, APPB_CLEAR} from 'action/index'
 
 const Clear =({handle})=>{

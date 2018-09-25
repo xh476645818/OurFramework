@@ -1,8 +1,6 @@
 /**
  * Created by xiaohe on 2018/6/4.
  */
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import {AppCdo, AppCclearDo, AppCdoAsync, APPC, APPC_CLEAR, actionCreate} from 'action/index'
 import {Input, Clear, Result} from 'com/index.js'
 

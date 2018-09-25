@@ -1,9 +1,6 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-
 class Result extends Component {
     constructor(props) {
         super(props);

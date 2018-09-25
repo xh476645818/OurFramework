@@ -1,7 +1,6 @@
 /**
  * Created by xiaohe on 2018/5/7.
  */
-import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Dom, Result, Clear} from 'com/index.js'
 import AppACss from "./AppA.scss";

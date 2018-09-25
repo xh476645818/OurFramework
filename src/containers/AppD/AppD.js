@@ -1,9 +1,6 @@
 /**
  * Created by xiaohe on 2018/5/7.
  */
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
 import {APPD,APPD_ASYN, actionCreate} from 'action/index';
 import {Dom} from 'com/index.js'
 

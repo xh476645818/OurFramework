@@ -13,7 +13,7 @@ module.exports = merge(common, {
         historyApiFallback: true,
         compress: true,
         inline: true,
-        host:'0.0.0.0',
+        host:project.devUrl,
         hot: true,
         port: project.devPort,
     },

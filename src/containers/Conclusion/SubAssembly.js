@@ -17,7 +17,7 @@ class SubAssembly extends Component {
         console.log('子-周期:componentWillMount')
     }
 
-    componentWillReceiveProps() {
+    componentWillReceiveProps(nextProps) {
         console.log('子-周期:componentWillReceiveProps');
 
         /*有个异步函数，会让你感觉不太一样*/

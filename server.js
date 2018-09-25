@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
     res.end();
 });
 
-app.listen(project.proPort,project.proUrl, function (error) {
+app.listen(project.proPort,project.proPort, function (error) {
     if (error) {
         console.error(error)
     } else {

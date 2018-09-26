@@ -66,6 +66,22 @@ npm run server 启动node服务进行浏览
 <script src="../public/ie/es6-shim.min.js"></script>
 <script src="../public/ie/es6-sham.min.js"></script>
 ```  
+#### 全局引入第三方库  
+**在build/webpack.common.js文件中使用webpack配置plugins，进行全局配置**  
+目前项目中进行了全局引入第三库配置的有：echarts、React、Component、Fragment、react-redux的connect、Proptypes、ReactDom  
+```
+plugins: [
+        new webpack.ProvidePlugin({
+            echarts: 'echarts',
+            React: 'react',
+            Component: ['react', 'Component'],
+            Fragment : ['react', 'Fragment'],
+            connect : ['react-redux', 'connect'],
+            PropTypes: 'prop-types',
+            ReactDOM: 'react-dom'
+        })
+    ]
+```
 #### 别名路径引入  
 1、在webpack.common.js文件中配置的全部别名路径  
 ```

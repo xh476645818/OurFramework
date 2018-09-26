@@ -6,10 +6,10 @@ import {APPC, APPC_CLEAR} from 'action/index';
 const AppC = (state = "", action) => {
     switch (action.type) {
         case APPC:
-            return [...state,action.text];
+            return [...state,action.value];
             break;
         case APPC_CLEAR:
-            return action.text="";
+            return action.vale="";
             break;
         default:
             return state;

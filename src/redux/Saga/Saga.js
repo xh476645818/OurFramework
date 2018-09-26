@@ -24,7 +24,7 @@ function* AppDSaga() {
 function* AppDSagaAsyn(e) {
     let todos = yield call(axios.get, "/AppB");
     yield delay(1000)
-    yield put({type: APPD_RESULT, result: todos});
+    yield put({type: APPD_RESULT, result: todos.data.result.AppD});
 }
 
 function* LoginSaga(e) {

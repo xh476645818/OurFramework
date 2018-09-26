@@ -79,7 +79,7 @@ const switchResult = (e, callback, event) => {
             alert('请输入正确内容')
             break;
         default:
-            event(callback(e))
+            event(callback(APPLOGIN_BUTTON_TO_SAGA,e))
             break;
     }
 }
@@ -108,10 +108,9 @@ const mapDispatchToProps = (dispatch, state) => (
             dispatch(AppLoginButtonThunkDo())
         },
         SagaLogin: (e) => {
-            console.log(e.store.getState())
             let store = e.store.getState().AppLoginSaga;
             let result = format(store);
-            switchResult(result, AppLoginButtonToSagaDo, dispatch)
+            switchResult(result, actionCreate, dispatch)
         }
     });
 AppLogin.contextTypes = {

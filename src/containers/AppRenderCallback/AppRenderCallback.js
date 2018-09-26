@@ -4,11 +4,18 @@ class AppRenderCallback extends Component {
         super(props, content)
     }
 
-    render(e=1) {
+    render() {
         return (
             <Fragment>
                 <Fill>
-                    {e}
+                    {a=>{
+                        console.log(a)
+                        return '父组件获取内部'+a
+                    }}
+                    {b=>{
+                        console.log(b)
+                        return '父组件获取内部'+b
+                    }}
                 </Fill>
             </Fragment>
         )

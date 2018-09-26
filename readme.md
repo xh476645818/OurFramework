@@ -8,9 +8,9 @@
     # 安装依赖
     // 推荐使用npm安装
     npm install
-    //or 使用下列安装可以解决下载速度过慢
+    //or 使用淘宝镜像安装可以解决下载速度过慢
     npm install -g cnpm --registry=https://registry.npm.taobao.org  
-    //or 使用cnpm
+    然后执行
     cnpm install
     #若已经使用cnpm 安装失败，请使用以下办法解决：
     1、删除项目目录中package-lock.json

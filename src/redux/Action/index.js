@@ -3,9 +3,7 @@
  * */
 import {
     AppBasynDo,
-    AppCdo,
     AppCdoAsync,
-    AppDdoResult,
     AppLoginButtonThunkDo,
     AppLoginButtonToSagaDo
 } from "./action"
@@ -43,9 +41,7 @@ export {
     APPLOGIN_BUTTON_SAGA,
     APPLOGIN_BUTTON_TO_SAGA,
     AppBasynDo,
-    AppCdo,
     AppCdoAsync,
-    AppDdoResult,
     AppLoginButtonThunkDo,
     AppLoginButtonToSagaDo,
     actionCreate

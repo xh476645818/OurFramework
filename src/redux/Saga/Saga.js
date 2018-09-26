@@ -10,25 +10,21 @@ import * as Action from 'action/index';
 import axios from 'axios';
 
 function* AppDSaga() {
-    console.log('AppDSaga')
     const todos = yield call(axios.get, "/a");
     yield put({type: Action.APPD_RESULT, result: todos});
 }
 
 function* AppDSagaAsyn(e) {
-    console.log('AppDSagaAsyn', e)
     let todos = yield call(axios.get, "/a");
     yield delay(1000)
     yield put({type: Action.APPD_RESULT, result: todos});
 }
 
 function* LoginSaga(e) {
-    console.log(e)
     let todos = yield call(axios.post, "/login", {
         'name': e.result.name,
         'password': e.result.password
     });
-    console.log(222222222, todos.data);
     let text;
     switch (todos.data.success) {
         case true || 'true':

@@ -21,8 +21,7 @@ var AppC = ({text, InputEvent, InputEventAsync, clearEvent}) => (
 const appCdo = (e, dispatch) => {
     switch (e.keyCode) {
         case 13 || "13":
-            dispatch(AppCdo(e.target.value))
-            console.log('----appCdo', e.target.value)
+            dispatch(actionCreate(APPC,e.target.value))
             break;
         default:
             break;

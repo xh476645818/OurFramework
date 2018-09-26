@@ -4,6 +4,7 @@
 import * as Action from 'action/index';
 import {thunk} from 'redux-thunk';
 import axios from 'axios';
+import {actionCreate} from 'action/index.js'
 
 //action
 //action创建函数
@@ -17,24 +18,11 @@ const AppBasynDo = (text) => dispatch => {
     })
 }
 
-const AppCdo = (text) => (
-    console.log('Action:Action.AppC', Action.APPC),
-        {
-            type: Action.APPC,
-            text
-        }
-);
 
-const AppDdoResult = (e) => (
-    console.log('输出的action', Action.AppDasyn),
-        {
-            type: Action.AppDasyn,
-            e
-        }
-);
 const AppCdoAsync = (text) => dispatch => {
     setTimeout(() => {
-        dispatch(AppCdo(text))
+        // dispatch(AppCdo(text))
+        dispatch(actionCreate(Action.APPC,text))
     }, 1000)
 }
 
@@ -76,9 +64,7 @@ const AppLoginButtonToSagaDo = (e) => (
 )
 export {
     AppBasynDo,
-    AppCdo,
     AppCdoAsync,
-    AppDdoResult,
     AppLoginButtonThunkDo,
     AppLoginButtonToSagaDo
 };

@@ -22,7 +22,7 @@ function* AppDSagaAsyn(e) {
 
 function* LoginSaga(e) {
     let todos = yield call(axios.post, "/login", {
-        'name': e.value.name,
+        'username': e.value.name,
         'password': e.value.password
     });
     let text;

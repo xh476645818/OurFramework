@@ -100,7 +100,8 @@ module.exports = {
             Fragment : ['react', 'Fragment'],
             connect : ['react-redux', 'connect'],
             PropTypes: 'prop-types',
-            ReactDOM: 'react-dom'
+            ReactDOM: 'react-dom',
+            Mock:'mockjs'
         })
     ]
 };

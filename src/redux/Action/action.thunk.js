@@ -3,17 +3,16 @@
  */
 import * as Action from 'action/index';
 import {thunk} from 'redux-thunk';
-import axios from 'axios';
 import {actionCreate} from 'action/index.js'
 
 //action
 //action创建函数
 const AppBasynDo = (text) => dispatch => {
-    axios.get("/a").then((response) => {
+    axios.get("/AppB").then((response) => {
         console.log('APPB_ASYN', response)
         dispatch({
             type: Action.APPB_ASYN,
-            'APPB_ASYN': response.data.AppB
+            'APPB_ASYN': response.data.result.AppB
         })
     })
 }
@@ -29,22 +28,22 @@ const AppCdoAsync = (text) => dispatch => {
 //登录
 const AppLoginButtonThunkDo = (e) => (dispatch, getState) => {
     console.log('AppLoginButtonThunk', getState().AppLoginThunk.name)
-    let name = getState().AppLoginThunk.name;
+    let username = getState().AppLoginThunk.name;
     let password = getState().AppLoginThunk.password;
-    if (name == '' || password == '') {
+    if (username == '' || password == '') {
         alert('请输入正确内容');
         return
     }
     axios.post('/login', {
-        'name': name,
+        'username': username,
         'password': password
     }).then((res) => {
-        console.log(res.data.success);
-        switch (res.data.success) {
-            case true || 'true':
+        console.log(res);
+        switch (res.data.code) {
+            case 1:
                 dispatch({
                     type: Action.APPLOGIN_BUTTON_THUNK,
-                    text: '看来是成功了'
+                    text: '看来是成功了'+res.data.result.userInfo.nickname
                 })
                 break;
             default:

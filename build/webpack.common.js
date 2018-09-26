@@ -101,7 +101,8 @@ module.exports = {
             connect : ['react-redux', 'connect'],
             PropTypes: 'prop-types',
             ReactDOM: 'react-dom',
-            Mock:'mockjs'
+            Mock:'mockjs',
+            axios:'axios'
         })
     ]
 };

@@ -111,6 +111,7 @@ const mapDispatchToProps = (dispatch, state) => (
             console.log(e.store.getState())
             let store = e.store.getState().AppLoginSaga;
             let result = format(store);
+            dispatch()
             switchResult(result, AppLoginButtonToSagaDo, dispatch)
         }
     });

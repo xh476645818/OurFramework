@@ -5,43 +5,50 @@
 import {delay} from 'redux-saga'
 import {put, call, takeEvery, take, fork, all} from 'redux-saga/effects'
 
-import * as Action from 'action/index';
+import {
+    APPD_RESULT,
+    APPLOGIN_SAGA,
+    APPLOGIN_BUTTON_TO_SAGA,
+    APPD_ASYN,
+    APPD
+} from 'action/index';
 
 import axios from 'axios';
 
 function* AppDSaga() {
-    const todos = yield call(axios.get, "/a");
-    yield put({type: Action.APPD_RESULT, result: todos});
+    const todos = yield call(axios.get, "/AppB");
+    console.log(todos)
+    yield put({type: APPD_RESULT, result: todos.data.result.AppD});
 }
 
 function* AppDSagaAsyn(e) {
-    let todos = yield call(axios.get, "/a");
+    let todos = yield call(axios.get, "/AppB");
     yield delay(1000)
-    yield put({type: Action.APPD_RESULT, result: todos});
+    yield put({type: APPD_RESULT, result: todos});
 }
 
 function* LoginSaga(e) {
     let todos = yield call(axios.post, "/login", {
-        'name': e.result.name,
+        'username': e.result.name,
         'password': e.result.password
     });
     let text;
-    switch (todos.data.success) {
-        case true || 'true':
-            text = '看来是成功了';
+    switch (todos.data.code) {
+        case 1:
+            text = '看来是成功了'+todos.data.result.userInfo.nickname;
             break;
         default:
             text = '肯定是失败了';
             break;
     }
-    yield put({type: Action.APPLOGIN_SAGA, result: text});
+    yield put({type: APPLOGIN_SAGA, result: text});
 }
 
 //观测方法
 function* WatchSaga() {
-    yield takeEvery(Action.APPD, AppDSaga)
-    yield takeEvery(Action.APPD_ASYN, AppDSagaAsyn)
-    yield takeEvery(Action.APPLOGIN_BUTTON_TO_SAGA,LoginSaga)
+    yield takeEvery(APPD, AppDSaga)
+    yield takeEvery(APPD_ASYN, AppDSagaAsyn)
+    yield takeEvery(APPLOGIN_BUTTON_TO_SAGA,LoginSaga)
 }
 
 //根方法

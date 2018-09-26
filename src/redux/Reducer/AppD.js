@@ -8,7 +8,7 @@ const AppD = (state = [], action) => {
         case APPD_RESULT:
             console.log('Action.AppDasyn.state', state)
             console.log('Action.AppDasyn.action', action.result)
-            return state = action.result.data.AppD;
+            return state = action.result.data;
             break;
         default:
             return state;

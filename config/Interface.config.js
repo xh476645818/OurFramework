@@ -5,22 +5,9 @@
 * InterfaceList，当全局mock开启时，每个接口是否使用mock或是真实
 * */
 
-export const InterfaceSwitch = false;
+export const InterfaceSwitch = true;
 export const InterfaceList = {
-    //基本信息详情
-    TableMockBaseInfo: true,
-    //上报信息详情
-    TableMockReportInfo: true,
-    //基本信息列表
-    TableMockBaseInfos: true,
-    //上报信息列表
-    TableMockReportInfos: true,
-    //菜单数据
-    MenuMock: true,
-    //token接口
-    TokenMock: true,
-    //上报详情所属单位
-    AgencyMock: true,
-    //测试用的接口
-    TestMock: true
+    //登录用的接口
+    LoginMock: true,
+    AppB: true
 }

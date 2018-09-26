@@ -3,9 +3,11 @@
  */
 //登录
 import * as LoginMock from './Login/mock.login';
+import * as AppB from './AppB/mock.AppB';
 
 
 
 export {
-    LoginMock
+    LoginMock,
+    AppB
 }

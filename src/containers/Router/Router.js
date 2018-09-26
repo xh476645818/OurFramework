@@ -1,11 +1,9 @@
 /**
  * Created by xiaohe on 2018/5/8.
  */
-import PropTypes from 'prop-types';
 import {HashRouter, Route, NavLink, Link, Switch} from 'react-router-dom';
 
-
-import {AppA,AppB,AppC,AppD,Nav,AppLogin,AppImg,Conclusion} from 'con/index.js'
+import {AppA,AppB,AppC,AppD,Nav,AppLogin,AppImg,Conclusion,AppRenderCallback} from 'con/index.js'
 
 export default class router extends React.Component {
     constructor(props, context) {
@@ -25,6 +23,7 @@ export default class router extends React.Component {
                         <Route path="/appD" component={AppD}/>
                         <Route path="/appLogin" component={AppLogin}/>
                         <Route path="/appImg" component={AppImg}/>
+                        <Route path="/appRenderCallback" component={AppRenderCallback}/>
                     </Switch>
                 </div>
 

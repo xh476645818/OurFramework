@@ -6,6 +6,7 @@ import AppImg from './AppImg/AppImg.js';
 import AppLogin from './AppLogin/AppLogin.js';
 import Nav from './Nav/Nav.js';
 import Conclusion from './Conclusion/ParentAssembly';
+import AppRenderCallback from './AppRenderCallback/AppRenderCallback';
 
 export {
     AppA,
@@ -15,5 +16,6 @@ export {
     AppImg,
     AppLogin,
     Nav,
-    Conclusion
+    Conclusion,
+    AppRenderCallback
 }

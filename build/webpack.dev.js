@@ -6,7 +6,6 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const project = require('../config/project.config.json');
 const webpack = require('webpack');
-console.log('11111111111', __dirname)
 module.exports = merge(common, {
     mode: 'development',
     devServer: {
@@ -14,7 +13,7 @@ module.exports = merge(common, {
         historyApiFallback: true,
         compress: true,
         inline: true,
-        host: project.devUrl,
+        host:project.devUrl,
         hot: true,
         port: project.devPort,
     },

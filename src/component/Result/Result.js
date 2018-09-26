@@ -1,8 +1,6 @@
 /**
  * Created by xiaohe on 2018/5/16.
  */
-import React, {Component} from 'react';
-
 export default class Result extends Component {
     constructor(props,context) {
         super(props,context);

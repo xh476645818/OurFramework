@@ -24,12 +24,12 @@ module.exports = {
             },
             //图片压缩
             {
-                test: /\.(png|jpg|jpeg|gif)$/,
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192,
+                            limit: 1024,
                             name: "img/[name].[hash].[ext]",
                             publicpath: './'
                         }
@@ -57,7 +57,7 @@ module.exports = {
                     limit: 10000,
                     name: 'media/[name].[ext]',
                 }
-            },
+            }
         ]
     },
     resolve: {
@@ -85,7 +85,22 @@ module.exports = {
             //组件别名
             'com': path.resolve(__dirname, '../src/component'),
             //公用方法
-            'method': path.resolve(__dirname, '../src/public/method')
+            'method': path.resolve(__dirname, '../src/public/method'),
+            //第三方的一些js
+            'js': path.resolve(__dirname, '../src/public/js'),
+            //config基本设置
+            'config': path.resolve(__dirname, '../config')
         }
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            echarts: 'echarts',
+            React: 'react',
+            Component: ['react', 'Component'],
+            Fragment : ['react', 'Fragment'],
+            connect : ['react-redux', 'connect'],
+            PropTypes: 'prop-types',
+            ReactDOM: 'react-dom'
+        })
+    ]
 };

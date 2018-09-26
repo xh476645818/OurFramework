@@ -1,13 +1,7 @@
 /**
  * Created by xiaohe on 2018/6/28.
  */
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-
-import PropTypes from 'prop-types';
-
 import {LoginName, LoginPassword, Button} from 'com/index.js';
-
 import {
     APPLOGIN_NAME_THUNK,
     APPLOGIN_NAME_SAGA,

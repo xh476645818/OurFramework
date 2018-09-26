@@ -1,7 +1,6 @@
 /**
  * Created by xiaohe on 2018/5/7.
  */
-import React, {Component} from 'react';
 import appImgCss from "./AppImg.css";
 import Img from 'img/timg.jpg';
 export default class AppImg extends React.Component {

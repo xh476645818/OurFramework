@@ -23,10 +23,6 @@ class Conclusion extends Component {
         console.log('父-周期componentWillReceiveProps')
     }
 
-    /*shouldComponentUpdate() {
-        console.log('父-周期shouldComponentUpdate');
-    }*/
-
     componentWillUpdate() {
         console.log('父-周期componentWillUpdate')
     }

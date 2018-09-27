@@ -19,13 +19,11 @@ class SubAssembly extends Component {
         console.log('子-周期:componentWillReceiveProps');
 
         /*有个异步函数，会让你感觉不太一样*/
-        setTimeout(() => {
-            this.setState({
-                data: this.props.data
-            }, () => {
-                console.log(this.state)
-            })
-        }, 0)
+        this.setState({
+            data: nextProps.data
+        }, () => {
+            console.log(this.state)
+        })
 
     }
 
@@ -36,9 +34,9 @@ class SubAssembly extends Component {
         console.log('nextState', nextState);
         console.log('state', this.state);
         // 选择注释或放开以下代码，会有不同发现
-         /* if(nextState.data == this.state.data){
-              return false
-          }*/
+        /* if(nextState.data == this.state.data){
+             return false
+         }*/
         return true
     }
 

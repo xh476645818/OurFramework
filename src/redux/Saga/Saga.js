@@ -29,8 +29,8 @@ function* AppDSagaAsyn(e) {
 
 function* LoginSaga(e) {
     let todos = yield call(axios.post, "/login", {
-        'username': e.result.name,
-        'password': e.result.password
+        'username': e.value.name,
+        'password': e.value.password
     });
     let text;
     switch (todos.data.code) {

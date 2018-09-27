@@ -55,15 +55,9 @@ const AppLoginButtonThunkDo = (e) => (dispatch, getState) => {
         }
     })
 }
-const AppLoginButtonToSagaDo = (e) => (
-    {
-        type: Action.APPLOGIN_BUTTON_TO_SAGA,
-        result: e
-    }
-)
+
 export {
     AppBasynDo,
     AppCdoAsync,
     AppLoginButtonThunkDo,
-    AppLoginButtonToSagaDo
 };

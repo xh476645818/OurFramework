@@ -4,8 +4,7 @@
 import {
     AppBasynDo,
     AppCdoAsync,
-    AppLoginButtonThunkDo,
-    AppLoginButtonToSagaDo
+    AppLoginButtonThunkDo
 } from "./action.thunk"
 
 import {APPB, APPB_ASYN, APPB_CLEAR} from './AppB/action.appb.type'
@@ -43,6 +42,5 @@ export {
     AppBasynDo,
     AppCdoAsync,
     AppLoginButtonThunkDo,
-    AppLoginButtonToSagaDo,
     actionCreate
 }

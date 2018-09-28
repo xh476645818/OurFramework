@@ -8,7 +8,7 @@ import {actionCreate} from 'action/index.js'
 //action
 //action创建函数
 const AppBasynDo = (text) => dispatch => {
-    axios.get("/AppB").then((response) => {
+    axios.get("/MockTest").then((response) => {
         console.log('APPB_ASYN', response)
         dispatch({
             type: Action.APPB_ASYN,

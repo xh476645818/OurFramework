@@ -16,13 +16,13 @@ import {
 import axios from 'axios';
 
 function* AppDSaga() {
-    const todos = yield call(axios.get, "/AppB");
+    const todos = yield call(axios.get, "/MockTest");
     console.log(todos)
     yield put({type: APPD_RESULT, result: todos.data.result.AppD});
 }
 
 function* AppDSagaAsyn(e) {
-    let todos = yield call(axios.get, "/AppB");
+    let todos = yield call(axios.get, "/MockTest");
     yield delay(1000)
     yield put({type: APPD_RESULT, result: todos.data.result.AppD});
 }

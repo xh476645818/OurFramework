@@ -9,5 +9,6 @@ export const InterfaceSwitch = true;
 export const InterfaceList = {
     //登录用的接口
     LoginMock: true,
-    AppB: true
+    AppB: true,
+    Name: true
 }

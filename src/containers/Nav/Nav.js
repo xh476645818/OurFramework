@@ -4,6 +4,9 @@
 import {NavLink} from 'react-router-dom';
 // import "./AppB.css"
 export default class App extends React.Component {
+    constructor(props,context){
+        super(props,context)
+    }
     render() {
         return (
             <div>
@@ -11,7 +14,8 @@ export default class App extends React.Component {
                 <p>1了解react的周期，点击链接周期，看组件Conclusion</p>
                 <p>2了解react的父子传值，点击链接AppA，看组件AppA</p>
                 <p>3了解react的redux与thunk，点击链接AppB，看组件AppB</p>
-                <li><NavLink to="/conclusion" replace>周期</NavLink></li>
+                <li><NavLink to="/appTest">测试</NavLink></li>
+                <li><NavLink to="/conclusion">周期</NavLink></li>
                 <li><NavLink to="/appA">AppA</NavLink></li>
                 <li><NavLink to="/appB">AppB</NavLink></li>
                 <li><NavLink to="/appC">AppC</NavLink></li>

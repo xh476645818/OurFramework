@@ -3,13 +3,13 @@
  */
 //登录
 import * as LoginMock from './Login/mock.login';
-import * as AppB from './AppB/mock.AppB';
+import * as MockTest from './MockTest/mock.MockTest';
 import * as Name from './Name/mock.name';
 
 
 
 export {
     LoginMock,
-    AppB,
+    MockTest,
     Name
 }

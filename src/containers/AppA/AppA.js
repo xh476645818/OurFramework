@@ -62,6 +62,4 @@ export default class AppA extends React.Component {
         )
     }
 };
-AppA.contextTypes = {
-    store: PropTypes.object
-}
+

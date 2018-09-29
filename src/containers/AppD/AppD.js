@@ -34,9 +34,6 @@ class AppD extends React.Component {
         )
     }
 };
-AppD.contextTypes = {
-    store: PropTypes.object
-}
 const mapStateToProps = (state) => (
     {
         list: state.AppD

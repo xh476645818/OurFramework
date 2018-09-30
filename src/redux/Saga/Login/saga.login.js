@@ -1,14 +1,14 @@
-import {put, takeEvery} from 'redux-saga/effects'
+import {put, call, takeEvery} from 'redux-saga/effects'
 import {
     APPLOGIN_BUTTON_TO_SAGA,
     APPLOGIN_SAGA
 } from 'action/index';
 
 function* LoginSaga(e) {
-    console.log('LoginSaga');
+    console.log('LoginSaga',e);
     let todos = yield call(axios.post, "/login", {
-        'username': e.result.name,
-        'password': e.result.password
+        'username': e.value.name,
+        'password': e.value.password
     });
     let text;
     switch (todos.data.code) {
@@ -27,4 +27,4 @@ function* LoginWatchSaga() {
     yield takeEvery(APPLOGIN_BUTTON_TO_SAGA, LoginSaga)
 }
 
-export {LoginWatchSaga}
+export default LoginWatchSaga

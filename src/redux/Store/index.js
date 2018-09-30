@@ -15,5 +15,4 @@ const store = createStore(Reducer
     compose(applyMiddleware(thunk,sagaMiddleware)) //插件调试，未安装会报错
 );
 sagaMiddleware.run(Saga);
-console.log('store')
 export default store;

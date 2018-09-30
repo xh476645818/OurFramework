@@ -48,7 +48,7 @@ class AppLogin extends Component {
                     <p>thunk的登录{this.props.textA}</p>
                 </div>
                 <div>
-                    <strong>登录验证的异步使用了redux-thunk，很多逻辑在saga和自身组件里，拦截模拟用了mock</strong>
+                    <strong>登录验证的异步使用了redux-saga，很多逻辑在saga和自身组件里，拦截模拟用了mock</strong>
                     <br/>
                     账号
                     <LoginName key={'SagaName'} handle={this.props.LoginNameSaga}/>
@@ -92,15 +92,19 @@ const mapStateToProps = (state, ownProps) => (
 )
 const mapDispatchToProps = (dispatch, state) => (
     {
+        //name写入store
         LoginNameThunk: (e) => {
             dispatch(actionCreate(APPLOGIN_NAME_THUNK, e))
         },
+        //Password写入store
         LoginPasswordThunk: (e) => {
             dispatch(actionCreate(APPLOGIN_PASSWORD_THUNK, e))
         },
+        //name写入store
         LoginNameSaga: (e) => {
             dispatch(actionCreate(APPLOGIN_NAME_SAGA, e))
         },
+        //Password写入store
         LoginPasswordSaga: (e) => {
             dispatch(actionCreate(APPLOGIN_PASSWORD_SAGA, e))
         },
@@ -114,4 +118,7 @@ const mapDispatchToProps = (dispatch, state) => (
             switchResult(result, actionCreate, dispatch)
         }
     });
+AppLogin.contextTypes = {
+    store: PropTypes.object
+}
 export default connect(mapStateToProps, mapDispatchToProps)(AppLogin);

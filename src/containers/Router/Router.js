@@ -3,7 +3,7 @@
  */
 import {HashRouter, Route, NavLink, Link, Switch} from 'react-router-dom';
 
-import {AppA,AppB,AppC,AppD,Nav,AppLogin,AppImg,Conclusion,AppRenderCallback,AppTest} from 'con/index.js'
+import {AppA,AppB,AppC,AppD,Nav,AppLogin,AppImg,Conclusion,AppRenderCallback,AppTest,AppRedux} from 'con/index.js'
 
 export default class router extends Component {
     constructor(props, context) {
@@ -25,6 +25,7 @@ export default class router extends Component {
                         <Route path="/appLogin" component={AppLogin}/>
                         <Route path="/appImg" component={AppImg}/>
                         <Route path="/appRenderCallback" component={AppRenderCallback}/>
+                        <Route path="/appRedux" component={AppRedux}/>
                     </Switch>
                 </div>
 

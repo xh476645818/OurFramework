@@ -3,7 +3,7 @@
  */
 import PropTypes from 'prop-types';
 import {Dom, Result, Clear} from 'com/index.js'
-import AppACss from "./AppA.scss";
+import "./AppA.scss";
 
 export default class AppA extends React.Component {
     constructor(props, context) {
@@ -19,7 +19,7 @@ export default class AppA extends React.Component {
     componentWillMount() {
         fetch("../../public/data/data.json").then(
             function (res) {
-                console.log('res',res)
+                console.log('res', res)
                 return res.json();
             }
         ).then((data) => {
@@ -31,7 +31,6 @@ export default class AppA extends React.Component {
     }
 
     handle(a) {
-        console.log(1111, this.context.store.getState())
         this.setState({
             text: this.state.text.concat(a.target.innerHTML)
         })
@@ -46,7 +45,7 @@ export default class AppA extends React.Component {
     render() {
         return (
             <div>
-                <strong className={AppACss.strong}>最普通的react,父传子子传父，没有调用redux，无状态子组件，在周期里获取数据，用的fetch非ajax</strong>
+                <strong className={'strong'}>最普通的react,父传子子传父，没有调用redux，无状态子组件，在周期里获取数据，用的fetch非ajax</strong>
                 <ul>
                     {
 

@@ -8,6 +8,7 @@ import Nav from './Nav/Nav.js';
 import Conclusion from './Conclusion/ParentAssembly';
 import AppRenderCallback from './AppRenderCallback/AppRenderCallback';
 import AppTest from './AppTest/AppTest';
+import AppRedux from './AppRedux/AppRedux';
 
 export {
     AppA,
@@ -19,5 +20,6 @@ export {
     Nav,
     Conclusion,
     AppTest,
-    AppRenderCallback
+    AppRenderCallback,
+    AppRedux
 }

@@ -6,7 +6,7 @@ import {AppB, AppBasyn} from './AppB.js';
 import AppC from './AppC.js';
 import AppD from './AppD.js';
 import {AppLoginThunk,AppLoginSaga,AppLoginButtonThunk,AppLoginButtonSaga} from './AppLogin.js';
-
+import {AppReduxRequest} from './AppRedux/reducer.appRedux';
 
 const Reducer = combineReducers({
     AppB: AppB,
@@ -17,5 +17,6 @@ const Reducer = combineReducers({
     AppLoginSaga: AppLoginSaga,
     AppLoginButtonThunk: AppLoginButtonThunk,
     AppLoginButtonSaga: AppLoginButtonSaga,
+    AppReduxRequest:AppReduxRequest
 });
 export default Reducer

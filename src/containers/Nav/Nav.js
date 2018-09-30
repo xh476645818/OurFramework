@@ -2,6 +2,7 @@
  * Created by xiaohe on 2018/5/7.
  */
 import {NavLink} from 'react-router-dom';
+import AppRedux from "../AppRedux/AppRedux";
 // import "./MockTest.css"
 export default class App extends React.Component {
     constructor(props,context){
@@ -23,6 +24,7 @@ export default class App extends React.Component {
                 <li><NavLink to="/appLogin" replace>AppLogin</NavLink></li>
                 <li><NavLink to="/appImg" replace>AppImg</NavLink></li>
                 <li><NavLink to="/appRenderCallback" replace>AppRenderCallback</NavLink></li>
+                <li><NavLink to="/appRedux" replace>AppRedux</NavLink></li>
             </div>
         )
     }

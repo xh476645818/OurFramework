@@ -3,27 +3,12 @@
  */
 var path = require('path');
 var webpack = require('webpack');
-//加载基本设置
-var project=require(path.join(__dirname, '../')+'config/project.config');
 
-function switchApp(project){
-    this.project=project;
-    if (this.project.antd==true&&this.project.redux==true){
-        return 'app.js';
-    }
-    if (this.project.antd==true){
-        return 'app-antd.js';
-    }
-    if (this.project.redux==true){
-        return 'app-antd.js';
-    }
-    return 'app-simple.js'
-}
 module.exports = {
     cache: true,
     context: path.join(__dirname, '../'),
     entry: {
-        app: ['babel-polyfill', './src/entrance/'+(switchApp(project))]
+        app: ['babel-polyfill', './src/entrance/app.js']
     },
     output: {
         path: path.resolve(__dirname, '../dist'),

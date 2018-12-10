@@ -1,3 +1,4 @@
+var colors=require('colors');
 var express = require('express');
 var path = require('path');
 var app = express();
@@ -13,10 +14,10 @@ app.get('/', function (req, res) {
     res.end();
 });
 
-app.listen(project.proPort,project.proPort, function (error) {
+app.listen(project.proPort,project.proUrl, function (error) {
     if (error) {
         console.error(error)
     } else {
-        console.info('===>listen at %s <===', project.proPort)
+        console.info(('****node服务启动成功**** ').yellow+(project.proUrl+':'+project.proPort).red)
     }
 })

@@ -1,21 +1,26 @@
 class Fill extends Component {
     constructor(props, content) {
         super(props, content)
-        this.state={
-            a:123,
-            b:234
+        this.state = {
+            text: '111'
         }
     }
+
 
     render() {
         return (
             <Fragment>
-                {console.log(this.props)}
-                {this.props.children[0](this.state.a)}
-                {this.props.children[1](this.state.b)}
+                <span style={{'cursor': 'pointer'}} onClick={this.props.handle}>
+                    <strong>
+                    {
+                        this.props.data
+                    }
+                    </strong>
+                </span>
             </Fragment>
         )
 
     }
 }
+
 export default Fill;
